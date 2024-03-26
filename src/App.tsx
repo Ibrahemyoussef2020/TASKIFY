@@ -26,10 +26,6 @@ useEffect(()=>{
 },[completedTodos,todos,unCompletedTodos])
 
 
-
-
-
-
   const handleAdd = (e:React.FormEvent)=>{
     e.preventDefault();
 

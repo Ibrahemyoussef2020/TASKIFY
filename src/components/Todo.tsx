@@ -103,8 +103,9 @@ const Todo = ({ index, todo, todos, setTodos , completedTodos , setCompletedTodo
         e.preventDefault();
 
         const modifiedTodos = todos.map(item => item.id === id ? {...item , isDone:!item.isDone} : item);
-        const modifiedCompletedTodos = todos.filter(item => item.isDone)
-        const modifiedUnCompletedTodos = todos.filter(item => !item.isDone)
+
+        const modifiedCompletedTodos = modifiedTodos.filter(item => item.isDone)
+        const modifiedUnCompletedTodos = modifiedTodos.filter(item => !item.isDone)
 
         localStorage.setItem(storageDataNames.s_todos , JSON.stringify(modifiedTodos));
         localStorage.setItem(storageDataNames.s_completedTodos , JSON.stringify(modifiedCompletedTodos));
