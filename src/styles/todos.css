@@ -1,0 +1,161 @@
+
+.all-todos{
+  width: 100%;
+}
+
+h2{
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+@media (min-width:767px){
+  .all-todos{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+
+@media (min-width:1024px){
+  h2{
+    font-size: 1.5rem;
+  }
+}
+
+.todos {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    padding: 15px;
+    justify-content: flex-start;
+  }
+
+
+  .todos > div{
+    flex: 1;
+    width: 100%;
+  }
+
+  .todo {
+    width: 100%;
+    background: yellowgreen;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 15px;
+    transition: 0.2s;
+  }
+
+
+  .todo.un-completed{
+    background-color: rgb(235, 103, 80);
+  }
+
+  .todo.completed {
+    background-color: rgb(4, 192, 4);
+  }
+
+  .todo form{
+    width: 100%;
+  }
+
+ 
+.btn-wrapper{
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+  
+  .remove {
+    background-color: rgb(235, 103, 80);
+  }
+
+  .todos__heading {
+    font-size: 30px;
+    /* text-align: center; */
+    color: white;
+  }
+  
+ 
+  .done{
+    text-decoration: line-through;
+  }
+  
+  
+  .todo:hover {
+    box-shadow: 0 0 5px black;
+    transform: scale(1.03);
+  }
+  
+  .todo--text {
+    flex: 1;
+    border: none;
+    font-size: 20px;
+    overflow-wrap: anywhere;
+  }
+  
+  .todo--text:focus {
+    outline: none;
+  }
+
+  hr{
+    margin: 5px auto 10px;
+    background: #000;
+    border: none;
+    height: 1px;
+  }
+  
+  .icon {
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .icon.one-item{
+    display: block;
+    width: fit-content;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    background: transparent;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  
+  @media (max-width: 700px) {
+    .form {
+      width: 95%;
+    }
+    .container {
+      width: 95%;
+      flex-direction: column;
+    }
+    .todos {
+      width: 95%;
+      margin-bottom: 10px;
+    }
+  }
+
+  /*
+  @media (min-width:540px){
+    .todo form{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .todo--text{
+      max-width: calc(100% - 110px);
+    }
+  }
+  */
