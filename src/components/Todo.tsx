@@ -27,15 +27,6 @@ const Todo = ({ index, todo, todos, setTodos , completedTodos , setCompletedTodo
         inputRef.current?.focus();
     }, [edit , todo.isDone]);
 
-    console.log(todo);
-
-    console.log(todos);
-
-    console.log(
-        localStorage.getItem(storageDataNames.s_todos) 
-    )
-    
-    
     
     const handleChangeTex = (e: React.FormEvent|any, id: string) => {
         e.preventDefault();
@@ -59,17 +50,11 @@ const Todo = ({ index, todo, todos, setTodos , completedTodos , setCompletedTodo
             localStorage.getItem(storageDataNames.s_unCompletedTodos) != null
             ){
 
-                setTodos(
-                    (todos)=> JSON.parse(localStorage.getItem(storageDataNames.s_todos) as string) 
-                )
+                setTodos(JSON.parse(localStorage.getItem(storageDataNames.s_todos) as string))
     
-                setCompletedTodos(
-                    (todos)=> JSON.parse(localStorage.getItem(storageDataNames.s_completedTodos) as string) 
-                )
+                setCompletedTodos((todos)=> JSON.parse(localStorage.getItem(storageDataNames.s_completedTodos) as string))
     
-                setUnCompletedTodos(
-                    (todos)=> JSON.parse(localStorage.getItem(storageDataNames.s_unCompletedTodos) as string) 
-                )
+                setUnCompletedTodos( JSON.parse(localStorage.getItem(storageDataNames.s_unCompletedTodos) as string))
         }
  
         setEdit(false);    
@@ -120,17 +105,11 @@ const Todo = ({ index, todo, todos, setTodos , completedTodos , setCompletedTodo
             ) {
             console.log('not null');
             
-            setTodos(
-                (todos)=> JSON.parse(localStorage.getItem(storageDataNames.s_todos) as string) 
-            )
+            setTodos(JSON.parse(localStorage.getItem(storageDataNames.s_todos) as string))
 
-            setCompletedTodos(
-                (todos)=> JSON.parse(localStorage.getItem(storageDataNames.s_completedTodos) as string) 
-            )
+            setCompletedTodos(JSON.parse(localStorage.getItem(storageDataNames.s_completedTodos) as string))
 
-            setUnCompletedTodos(
-                (todos)=> JSON.parse(localStorage.getItem(storageDataNames.s_unCompletedTodos) as string) 
-            )
+            setUnCompletedTodos(JSON.parse(localStorage.getItem(storageDataNames.s_unCompletedTodos) as string))
         }     
       
     };
@@ -146,9 +125,9 @@ const Todo = ({ index, todo, todos, setTodos , completedTodos , setCompletedTodo
                 ref={inputRef}
                 />
             ) : todo.isDone ? (
-                <p className="todo--text">{todo.text}</p>
+                <span className="todo--text">{todo.text}</span>
             ) : (
-                <p className="todo--text">{todo.text}</p>
+                <span className="todo--text">{todo.text}</span>
             )}
             <hr />
             <div className="btn-wrapper">
